@@ -74,5 +74,6 @@ public class Ejercicio5 {
 		
 		//Cerramos scanner
 		rd.close();
+
 	}
 }
