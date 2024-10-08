@@ -27,6 +27,9 @@ public class Ejercicio6 {
 		if (discriminante < 0) {
 			System.out.println("No hay solución");
 		}
+		else if (coeficienteA==0) {
+			System.out.println("Solo hay una solución, ecuación de primer grado: " + (-coeficienteC/coeficienteB));
+		}
 		else if (discriminante == 0) {
 			System.out.println("Solo hay una solución: " + (-coeficienteB-Math.sqrt(discriminante)/(2*coeficienteA)));
 		}
