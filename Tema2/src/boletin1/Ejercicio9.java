@@ -13,6 +13,11 @@ public class Ejercicio9 {
 		String player1;
 		String player2;
 		
+		//Creamos las variable para las opciones del juego
+		final String PIEDRA = "PIEDRA";
+		final String PAPEL = "PAPEL";
+		final String TIJERA = "TIJERA";
+		
 		//Abrimos scanner
 		Scanner rd = new Scanner(System.in);
 		
@@ -29,19 +34,15 @@ public class Ejercicio9 {
 		if (player1.equals(player2)) {
 			System.out.println("EMPATE");
 			} 
-		else if (player1.equals("PIEDRA") && player2.equals("TIJERA") ||
-				 player1.equals("TIJERA") && player2.equals("PAPEL") ||
-				 player1.equals("PAPEL") && player2.equals("PIEDRA")) {
+		else if (player1.equalsIgnoreCase(PIEDRA) && player2.equals(TIJERA) ||
+				 player1.equalsIgnoreCase(TIJERA) && player2.equals(PAPEL) ||
+				 player1.equalsIgnoreCase(PAPEL) && player2.equals(PIEDRA)) {
 			System.out.println("GANA P1");
 		}
-		else if (player2.equals("PIEDRA") && player1.equals("TIJERA") ||
-				 player2.equals("TIJERA") && player1.equals("PAPEL") ||
-				 player2.equals("PAPEL") && player1.equals("PIEDRA")) {
+		else  {
 			System.out.println("GANA P2");
 		}
-		else {
-			System.out.println("Error de lectura");
-		}
+
 		
 		//Cerramos scanner
 		rd.close();
