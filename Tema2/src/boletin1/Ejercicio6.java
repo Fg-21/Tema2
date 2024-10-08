@@ -24,10 +24,9 @@ public class Ejercicio6 {
 		discriminante = coeficienteB * coeficienteB -4 * coeficienteA * coeficienteC;
 		
 		//Depende del discriminante, nuestra ecuacion tendrá 0, 1 o 2 soluciones
-		if (discriminante < 0) {
-			System.out.println("No hay solución");
-		}
-		else if (coeficienteA==0) {
+
+		
+		if (coeficienteA==0) {
 			System.out.println("Solo hay una solución, ecuación de primer grado: " + (-coeficienteC/coeficienteB));
 		}
 		else if (discriminante == 0) {
@@ -35,11 +34,13 @@ public class Ejercicio6 {
 		}
 		else if (discriminante > 0) {
 			System.out.println("Hay 2 soluciones");
-			System.out.println("Solución 1: " + (-coeficienteB-Math.sqrt(discriminante)/(2*coeficienteA)));
-			System.out.println("Solución 2: " + (-coeficienteB+Math.sqrt(discriminante)/(2*coeficienteA)));
+			System.out.println("Solución 1: " + ((-coeficienteB - Math.sqrt(discriminante))/(2*coeficienteA)));
+			System.out.println("Solución 2: " + ((-coeficienteB + Math.sqrt(discriminante))/(2*coeficienteA)));
 		}
-		
+		else if (discriminante < 0) {
+			System.out.println("No hay solución");
 		//Cerramos scanner
 		rd.close();
+		}
 	}
 }
