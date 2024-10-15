@@ -9,39 +9,55 @@ public class Ejercicio4 {
 		 *la media de los números negativos y el número de ceros que ha introducido el usuario.*/
 		
 		//Creamos una variable para introducir números
-		int numeros;
+		int numeros = 0;
 		
 		//Creamos una variable para hacer luego la media
 		double cont = 0;
 		
 		//Creamos una variable para contar ceros 
-		double contCeros = 0;
+		int contCeros = 0;
 		
 		//Creamos una variable para sumar los positivos
 		int suma = 0;
 		
-		//Creamos una variable para guardar la media
-		double media;
+		//Creamos un contador para la media de los números negativos
+		int contNega = 0;
 		
+		//Creamos un sumatorio para los números negativos
+		int sumaNega = 0;
+		
+		//Creamos una variable para guardar la media
+		double media = 0;
 		//Abrimos scanner
 		Scanner rd = new Scanner(System.in);
-		
-		//Pedimos al usuario el primer número
-		System.out.println("Introduce el primer número");
-		numeros = rd.nextInt();
+
 		
 		//Repetiremos la operación 9 veces más
-		while (cont<9) {
-			++cont;
+		while (cont < 10) {
+			System.out.println("Introduce un número");
+			suma = rd.nextInt();
 			if (suma < 0) {
-				media= suma/cont;
-			} else if (numeros == 0) {
+				contNega++;
+				sumaNega += suma;
+				media = sumaNega/contNega;
+			} else if (suma == 0) {
 				contCeros++;
 			} else if (suma >= 0);{
 				numeros += suma;
 			}
-			System.out.println("Introduce el siguiente número");
-			suma = rd.nextInt();
+			cont++;
 		}
+		
+		//Mostramos los números positivos sumados
+		System.out.println("Los numeros sumados son: " + numeros);
+		
+		//Mostramos los ceros introducidos
+		System.out.println("Los ceros introducidos son: " + contCeros);
+
+		//Mostramos la media de los números negativos
+		System.out.println("La media de los números negativos introducidos son: " + media);
+		
+		//Cerramos scanner
+		rd.close();
 	}
 }
