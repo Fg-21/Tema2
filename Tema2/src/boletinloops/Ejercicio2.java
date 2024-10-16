@@ -25,16 +25,16 @@ public class Ejercicio2 {
 		numeros = rd.nextInt();
 		
 		//Hacemos un bucle para ir sumando números hasta que el usuario introduzca un negativo
-		while (suma >= 0) {
-			numeros += suma;
+		while (numeros >= 0) {
+			suma += numeros;
 			cont++;
 			System.out.println("Introduce un número a sumar, para parar de sumar introduce un número negativo:");
-			suma = rd.nextInt();
+			numeros = rd.nextInt();
 			
 		}
 		
 		//Mostramos el total de la suma de los números y la cantidad de números introducidos
-		System.out.println("La suma de los números es de: " + numeros);
+		System.out.println("La suma de los números es de: " + suma);
 		System.out.println("La cantidad de los números positivos introducidos es de: " + cont);
 		
 		//Cerramos scanner

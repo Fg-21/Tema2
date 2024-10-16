@@ -12,7 +12,7 @@ public class Ejercicio4 {
 		int numeros = 0;
 		
 		//Creamos una variable para hacer luego la media
-		double cont = 0;
+		int cont = 0;
 		
 		//Creamos una variable para contar ceros 
 		int contCeros = 0;
@@ -27,7 +27,7 @@ public class Ejercicio4 {
 		int sumaNega = 0;
 		
 		//Creamos una variable para guardar la media
-		double media = 0;
+		double media;
 		//Abrimos scanner
 		Scanner rd = new Scanner(System.in);
 
@@ -35,25 +35,27 @@ public class Ejercicio4 {
 		//Repetiremos la operación 9 veces más
 		while (cont < 10) {
 			System.out.println("Introduce un número");
-			suma = rd.nextInt();
-			if (suma < 0) {
+			numeros = rd.nextInt();
+			if (numeros < 0) {
 				contNega++;
-				sumaNega += suma;
-				media = sumaNega/contNega;
-			} else if (suma == 0) {
+				sumaNega += numeros;
+			} else if (numeros == 0) {
 				contCeros++;
-			} else if (suma >= 0);{
-				numeros += suma;
+			} else {
+				suma += numeros;
 			}
 			cont++;
 		}
 		
 		//Mostramos los números positivos sumados
-		System.out.println("Los numeros sumados son: " + numeros);
+		System.out.println("Los numeros sumados son: " + suma);
 		
 		//Mostramos los ceros introducidos
 		System.out.println("Los ceros introducidos son: " + contCeros);
 
+		//Calculamos la media
+		media = sumaNega/contNega;
+		
 		//Mostramos la media de los números negativos
 		System.out.println("La media de los números negativos introducidos son: " + media);
 		
