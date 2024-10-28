@@ -25,9 +25,6 @@ public class Ejercicio1 {
 		//Creamos la varable para la cantidad de segundos a incrementar
 		int plusSecs;
 		
-		//Creamos una variable para el desborde de horas
-		int overH;
-		
 		//Creamos una cadena para agregar 0 a los numeros sin decenas
 		String resul = ""; 
 		
@@ -60,30 +57,37 @@ public class Ejercicio1 {
 			plusSecs = rd.nextInt();
 		} while (plusSecs < 0);
 		
-		//Gestionamos el desborde de segundos
-		for(int cont = 0; cont < plusSecs; cont++) {
-			segundos += plusSecs;
-			if (segundos >= 60) {
-				segundos = 0;
-				minutos++;
-			}
-			
-			//Gestionamos el desborde de minutos
-			if (minutos >= 60) {
-				minutos = 0;
-				horas++;
-			}
-				
-			//Gestionamos el desborde de horas
-			if (horas >= 24) {
-				horas = 0;
-			}
+		//Sumamos los segundos y los segundos añadidos para tener un total
+		segundos += plusSecs;
 		
+		//Gestionamos el desborde de segundos
+			for(int cont = 0; cont < plusSecs; cont++) {
+				if (segundos + plusSecs >= 60 && segundos > 0) {
+					segundos -= 60 ;
+					minutos++;
+				}
+				
+				//Gestionamos el desborde de minutos
+				if (minutos >= 60) {
+					minutos = 0;
+					horas++;
+				}
+					
+				//Gestionamos el desborde de horas
+				if (horas >= 24) {
+					horas = 0;
+				}
 		}
+			
+		//Hacemos que se muestre 0X si es un número de una cifra	
 		resul += (horas < 10 ? "0" : "") + horas + ":";
 		resul += (minutos < 10 ? "0" : "") + minutos + ":";
 		resul += (segundos < 10 ? "0" : "") + segundos;
 		
+		//Mostramos la hora por pantalla
 		System.out.println("La hora actual es: " + resul);
+		
+		//Cerramos scanner
+		rd.close();
 	}
 }
