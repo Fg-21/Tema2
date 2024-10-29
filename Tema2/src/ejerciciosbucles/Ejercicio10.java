@@ -19,14 +19,26 @@ public class Ejercicio10 {
 		//Creamos la variable para guardar el número capicúa
 		int capi;
 		
+		//Creamos una variable para definir si hay error en nuestro codigo
+		boolean error;
+	
+		
 		//Abrimos scanner
 		Scanner rd = new Scanner(System.in);
 		
 		//Comprobamos que el número esta dentro de rango
-		do {
-			System.out.println("Introduce el número");
-			num = rd.nextInt();
-		} while (num < 0);
+		do {	
+			try {
+				System.out.println("Introduce el número");
+				num = rd.nextInt();
+				assert num > 0 : "El número es negativo";
+				error = false;
+			} catch (AssertionError e) {
+				System.err.println(e.getMessage());
+				rd.nextLine();
+				error = true;
+			}
+		} while (error);
 		
 		
 		//Invertimos el número para compararlo
